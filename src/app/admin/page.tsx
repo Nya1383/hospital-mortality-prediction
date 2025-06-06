@@ -257,43 +257,63 @@ export default function AdminPanel() {
 
   if (!isAuthenticated) {
     return (
-      <div className="container mx-auto py-8">
-        <div className="max-w-md mx-auto">
-          <div className="card">
-            <h2 className="text-2xl font-bold text-center mb-6">🔐 Admin Access</h2>
+      <div className="hospital-bg min-h-screen flex items-center justify-center py-12">
+        <div className="max-w-md mx-auto px-4">
+          <div className="glass-card">
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                </svg>
+              </div>
+              <h2 className="text-3xl font-bold text-gradient-medical mb-2">🔐 Admin Access</h2>
+              <p className="text-gray-600">Secure Portal for Healthcare Administrators</p>
+            </div>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Admin Code
+                <label className="form-label">
+                  Admin Authentication Code
                 </label>
                 <input
                   type="password"
                   value={authCode}
                   onChange={(e) => setAuthCode(e.target.value)}
                   className="form-input"
-                  placeholder="Enter admin code"
+                  placeholder="Enter secure admin code"
                   onKeyPress={(e) => e.key === 'Enter' && handleAdminLogin()}
                 />
               </div>
 
               <button
                 onClick={handleAdminLogin}
-                className="w-full btn btn-primary"
+                className="w-full btn btn-medical flex items-center justify-center space-x-2"
               >
-                Access Admin Panel
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Access Admin Dashboard</span>
               </button>
             </div>
 
-            <div className="mt-6 text-center">
-              <Link href="/" className="text-blue-600 hover:text-blue-800">
-                ← Back to Home
+            <div className="mt-8 text-center">
+              <Link href="/" className="text-teal-600 hover:text-teal-800 flex items-center justify-center space-x-2">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span>Return to Healthcare Portal</span>
               </Link>
             </div>
 
-            <div className="mt-6 p-4 bg-gray-100 rounded">
-              <h4 className="font-semibold mb-2">Test Admin Codes:</h4>
-              <p className="text-sm">ADMIN123 or Admin</p>
+            <div className="mt-8 p-4 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl border border-teal-100">
+              <div className="flex items-center mb-2">
+                <svg className="w-5 h-5 text-teal-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h4 className="font-semibold text-teal-800">Demo Access Codes:</h4>
+              </div>
+              <p className="text-sm text-teal-700"><strong>ADMIN123</strong> or <strong>Admin</strong></p>
+              <p className="text-xs text-teal-600 mt-1">For testing and demonstration purposes</p>
             </div>
           </div>
         </div>
@@ -313,13 +333,28 @@ export default function AdminPanel() {
   const diabetesCount = predictions.filter(p => p.Diabetes === 'Yes').length
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">🏥 Advanced Hospital Analytics Dashboard</h1>
-        <button onClick={handleLogout} className="btn btn-secondary">
-          Logout
-        </button>
-      </div>
+    <div className="admin-bg min-h-screen">
+      <div className="container mx-auto py-8">
+        <div className="glass-card mb-8">
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-4xl font-bold text-gradient-medical mb-2">🏥 Personalized Federated Learning Dashboard</h1>
+              <p className="text-gray-600">Multi-Center mortality prediction analytics and system management</p>
+            </div>
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-green-500 rounded-full pulse-medical"></div>
+                <span className="text-sm text-gray-600">System Online</span>
+              </div>
+              <button onClick={handleLogout} className="btn btn-secondary">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
 
       {/* Tab Navigation */}
       <div className="mb-8">
@@ -889,6 +924,7 @@ export default function AdminPanel() {
           </div>
         </div>
       )}
+      </div>
     </div>
   )
 } 

@@ -2,8 +2,121 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hospital ICU Background Themes */
+.hospital-bg {
+  background-image: linear-gradient(rgba(0, 31, 63, 0.85), rgba(0, 31, 63, 0.85)), url('/images/hospital-icu-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.hospital-bg-light {
+  background-image: linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)), url('/images/hospital-icu-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.admin-bg {
+  background-image: linear-gradient(rgba(249, 250, 251, 0.97), rgba(249, 250, 251, 0.97)), url('/images/hospital-icu-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Glass Morphism Effects */
+.glass-card {
+  @apply bg-white/90 backdrop-blur-md rounded-xl shadow-2xl p-8 border border-white/20;
+}
+
+.medical-card {
+  @apply bg-gradient-to-br from-white/95 to-blue-50/95 backdrop-blur-sm rounded-xl shadow-xl p-6 border border-blue-100/50;
+}
+
+.nav-glass {
+  @apply bg-white/80 backdrop-blur-md border-b border-white/20 shadow-lg;
+}
+
+/* Enhanced Card Styles */
+.card {
+  @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-gray-200/50 hover:shadow-xl transition-all duration-300;
+}
+
+.stat-card {
+  @apply bg-gradient-to-br from-white/90 to-gray-50/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-gray-200/30 hover:shadow-xl transition-all duration-300 hover:scale-105;
+}
+
+.chart-container {
+  @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-4 border border-gray-200/50;
+}
+
+/* Enhanced Button Styles */
+.btn {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-gray-600 to-gray-700 text-white hover:from-gray-700 hover:to-gray-800 shadow-lg hover:shadow-xl;
+}
+
+.btn-medical {
+  @apply bg-gradient-to-r from-teal-600 to-cyan-600 text-white hover:from-teal-700 hover:to-cyan-700 shadow-lg hover:shadow-xl;
+}
+
+.btn-success {
+  @apply bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 shadow-lg hover:shadow-xl;
+}
+
+.btn-warning {
+  @apply bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:from-orange-600 hover:to-amber-600 shadow-lg hover:shadow-xl;
+}
+
+.btn-danger {
+  @apply bg-gradient-to-r from-red-600 to-rose-600 text-white hover:from-red-700 hover:to-rose-700 shadow-lg hover:shadow-xl;
+}
+
+/* Enhanced Form Styles */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-300/70 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/90 backdrop-blur-sm transition-all duration-200;
+}
+
+.form-label {
+  @apply block text-sm font-semibold text-gray-700 mb-2;
+}
+
+.form-select {
+  @apply w-full px-4 py-3 border border-gray-300/70 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/90 backdrop-blur-sm transition-all duration-200;
+}
+
+/* Medical Theme Colors */
+.text-medical-primary {
+  @apply text-teal-600;
+}
+
+.text-medical-secondary {
+  @apply text-cyan-600;
+}
+
+.bg-medical-gradient {
+  @apply bg-gradient-to-br from-teal-50 to-cyan-50;
+}
+
+.bg-medical-primary {
+  @apply bg-gradient-to-r from-teal-600 to-cyan-600;
+}
+
+/* Container Styles */
 body {
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
 .container {
@@ -12,22 +125,122 @@ body {
   padding: 0 1rem;
 }
 
-.btn {
-  @apply px-4 py-2 rounded-md font-medium transition-colors;
+/* Animations */
+.pulse-medical {
+  animation: pulse-medical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.btn-primary {
-  @apply bg-blue-600 text-white hover:bg-blue-700;
+@keyframes pulse-medical {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
 }
 
-.btn-secondary {
-  @apply bg-gray-600 text-white hover:bg-gray-700;
+.float-animation {
+  animation: float 3s ease-in-out infinite;
 }
 
-.card {
-  @apply bg-white rounded-lg shadow-md p-6;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.form-input {
-  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+/* Medical Device Inspired Elements */
+.monitor-screen {
+  @apply bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg p-4 border-2 border-slate-600 shadow-inner;
+}
+
+.vital-sign {
+  @apply bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md;
+}
+
+.alert-critical {
+  @apply bg-gradient-to-r from-red-500 to-rose-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md animate-pulse;
+}
+
+.alert-warning {
+  @apply bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md;
+}
+
+/* Loading Spinner */
+.medical-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600;
+}
+
+/* Responsive Navigation */
+.nav-mobile {
+  @apply fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg;
+}
+
+/* Table Styles */
+.medical-table {
+  @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-200/50;
+}
+
+.table-header {
+  @apply bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200;
+}
+
+/* Status Indicators */
+.status-good {
+  @apply bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-warning {
+  @apply bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-medium;
+}
+
+.status-critical {
+  @apply bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium;
+}
+
+/* Icon Styles */
+.icon-medical {
+  @apply w-6 h-6 text-teal-600;
+}
+
+.icon-status {
+  @apply w-4 h-4 inline-block mr-1;
+}
+
+/* Gradient Text */
+.text-gradient-medical {
+  background: linear-gradient(135deg, #0d9488, #0891b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shadow Utilities */
+.shadow-medical {
+  box-shadow: 0 10px 25px -3px rgba(13, 148, 136, 0.1), 0 4px 6px -2px rgba(13, 148, 136, 0.05);
+}
+
+.shadow-glass {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Scroll Styles */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
 } 
