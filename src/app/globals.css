@@ -12,6 +12,14 @@
   min-height: 100vh;
 }
 
+/* Mobile-optimized background for better performance */
+@media (max-width: 768px) {
+  .hospital-bg {
+    background-attachment: scroll;
+    background-image: linear-gradient(rgba(0, 31, 63, 0.9), rgba(0, 31, 63, 0.9)), url('/images/hospital-icu-bg.jpg');
+  }
+}
+
 .hospital-bg-light {
   background-image: linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)), url('/images/hospital-icu-bg.jpg');
   background-size: cover;
@@ -19,6 +27,12 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .hospital-bg-light {
+    background-attachment: scroll;
+  }
 }
 
 .admin-bg {
@@ -29,35 +43,56 @@
   background-repeat: no-repeat;
 }
 
-/* Glass Morphism Effects */
+@media (max-width: 768px) {
+  .admin-bg {
+    background-attachment: scroll;
+  }
+}
+
+/* Glass Morphism Effects - Mobile Optimized */
 .glass-card {
-  @apply bg-white/90 backdrop-blur-md rounded-xl shadow-2xl p-8 border border-white/20;
+  @apply bg-white/90 backdrop-blur-md rounded-xl shadow-2xl p-4 sm:p-6 lg:p-8 border border-white/20;
 }
 
 .medical-card {
-  @apply bg-gradient-to-br from-white/95 to-blue-50/95 backdrop-blur-sm rounded-xl shadow-xl p-6 border border-blue-100/50;
+  @apply bg-gradient-to-br from-white/95 to-blue-50/95 backdrop-blur-sm rounded-xl shadow-xl p-4 sm:p-6 border border-blue-100/50;
 }
 
 .nav-glass {
   @apply bg-white/80 backdrop-blur-md border-b border-white/20 shadow-lg;
 }
 
-/* Enhanced Card Styles */
+/* Enhanced Card Styles - Mobile Responsive */
 .card {
-  @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-gray-200/50 hover:shadow-xl transition-all duration-300;
+  @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-4 sm:p-6 border border-gray-200/50 hover:shadow-xl transition-all duration-300;
 }
 
 .stat-card {
-  @apply bg-gradient-to-br from-white/90 to-gray-50/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-gray-200/30 hover:shadow-xl transition-all duration-300 hover:scale-105;
+  @apply bg-gradient-to-br from-white/90 to-gray-50/90 backdrop-blur-sm rounded-xl shadow-lg p-4 sm:p-6 border border-gray-200/30 hover:shadow-xl transition-all duration-300;
+}
+
+/* Mobile-friendly hover effects */
+@media (hover: hover) {
+  .stat-card:hover {
+    @apply scale-105;
+  }
 }
 
 .chart-container {
-  @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-4 border border-gray-200/50;
+  @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-3 sm:p-4 border border-gray-200/50;
 }
 
-/* Enhanced Button Styles */
+/* Enhanced Button Styles - Touch Optimized */
 .btn {
-  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md;
+  @apply px-4 py-3 sm:px-6 rounded-lg font-medium transition-all duration-300 shadow-md min-h-[44px] text-sm sm:text-base;
+  /* Minimum 44px touch target for better mobile accessibility */
+}
+
+/* Remove transform hover effects on mobile for better performance */
+@media (hover: hover) {
+  .btn:hover {
+    @apply scale-105;
+  }
 }
 
 .btn-primary {
@@ -84,9 +119,10 @@
   @apply bg-gradient-to-r from-red-600 to-rose-600 text-white hover:from-red-700 hover:to-rose-700 shadow-lg hover:shadow-xl;
 }
 
-/* Enhanced Form Styles */
+/* Enhanced Form Styles - Mobile Optimized */
 .form-input {
-  @apply w-full px-4 py-3 border border-gray-300/70 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/90 backdrop-blur-sm transition-all duration-200;
+  @apply w-full px-3 py-3 sm:px-4 border border-gray-300/70 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/90 backdrop-blur-sm transition-all duration-200 text-base;
+  /* text-base prevents zoom on iOS */
 }
 
 .form-label {
@@ -94,7 +130,7 @@
 }
 
 .form-select {
-  @apply w-full px-4 py-3 border border-gray-300/70 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/90 backdrop-blur-sm transition-all duration-200;
+  @apply w-full px-3 py-3 sm:px-4 border border-gray-300/70 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/90 backdrop-blur-sm transition-all duration-200 text-base;
 }
 
 /* Medical Theme Colors */
@@ -114,9 +150,10 @@
   @apply bg-gradient-to-r from-teal-600 to-cyan-600;
 }
 
-/* Container Styles */
+/* Container Styles - Mobile Responsive */
 body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
 }
 
 .container {
@@ -125,7 +162,20 @@ body {
   padding: 0 1rem;
 }
 
-/* Animations */
+/* Responsive container padding */
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Animations - Reduced motion for better mobile performance */
 .pulse-medical {
   animation: pulse-medical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -145,6 +195,17 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
+/* Reduce animation on mobile for better performance */
+@media (prefers-reduced-motion: reduce) {
+  .float-animation {
+    animation: none;
+  }
+  
+  .pulse-medical {
+    animation: none;
+  }
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -156,24 +217,24 @@ body {
 
 /* Medical Device Inspired Elements */
 .monitor-screen {
-  @apply bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg p-4 border-2 border-slate-600 shadow-inner;
+  @apply bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg p-3 sm:p-4 border-2 border-slate-600 shadow-inner;
 }
 
 .vital-sign {
-  @apply bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md;
+  @apply bg-gradient-to-r from-green-500 to-emerald-500 text-white px-2 py-1 sm:px-3 rounded-full text-xs sm:text-sm font-bold shadow-md;
 }
 
 .alert-critical {
-  @apply bg-gradient-to-r from-red-500 to-rose-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md animate-pulse;
+  @apply bg-gradient-to-r from-red-500 to-rose-500 text-white px-2 py-1 sm:px-3 rounded-full text-xs sm:text-sm font-bold shadow-md animate-pulse;
 }
 
 .alert-warning {
-  @apply bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md;
+  @apply bg-gradient-to-r from-amber-500 to-orange-500 text-white px-2 py-1 sm:px-3 rounded-full text-xs sm:text-sm font-bold shadow-md;
 }
 
 /* Loading Spinner */
 .medical-spinner {
-  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600;
+  @apply animate-spin rounded-full h-6 w-6 sm:h-8 sm:w-8 border-b-2 border-teal-600;
 }
 
 /* Responsive Navigation */
@@ -181,16 +242,16 @@ body {
   @apply fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg;
 }
 
-/* Table Styles */
+/* Table Styles - Mobile Responsive */
 .medical-table {
-  @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-200/50;
+  @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-200/50 overflow-x-auto;
 }
 
 .table-header {
   @apply bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200;
 }
 
-/* Status Indicators */
+/* Status Indicators - Mobile Optimized */
 .status-good {
   @apply bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium;
 }
@@ -203,21 +264,28 @@ body {
   @apply bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium;
 }
 
-/* Icon Styles */
+/* Icon Styles - Responsive sizing */
 .icon-medical {
-  @apply w-6 h-6 text-teal-600;
+  @apply w-5 h-5 sm:w-6 sm:h-6 text-teal-600;
 }
 
 .icon-status {
-  @apply w-4 h-4 inline-block mr-1;
+  @apply w-3 h-3 sm:w-4 sm:h-4 inline-block mr-1;
 }
 
-/* Gradient Text */
+/* Gradient Text - Mobile Optimized */
 .text-gradient-medical {
   background: linear-gradient(135deg, #0d9488, #0891b2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Ensure text remains readable on older mobile browsers */
+@supports not (-webkit-background-clip: text) {
+  .text-gradient-medical {
+    color: #0d9488;
+  }
 }
 
 /* Shadow Utilities */
@@ -234,6 +302,32 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  /* Improve text readability on small screens */
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* Better spacing for mobile */
+  .glass-card {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Ensure minimum touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+  
+  /* Prevent horizontal scroll */
+  .container {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
 /* Print Styles */
 @media print {
   .no-print {
@@ -243,4 +337,27 @@ body {
   .print-only {
     display: block !important;
   }
+  
+  /* Remove backgrounds for print */
+  .hospital-bg, .hospital-bg-light, .admin-bg {
+    background-image: none !important;
+    background-color: white !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass-card, .medical-card {
+    border-width: 2px;
+    border-color: #000;
+  }
+  
+  .btn {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Dark mode support preparation */
+@media (prefers-color-scheme: dark) {
+  /* Future dark mode styles can be added here */
 } 
