@@ -53,10 +53,18 @@ export default function Login() {
   }
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="max-w-md mx-auto">
-        <div className="card">
-          <h2 className="text-2xl font-bold text-center mb-6">User Login</h2>
+    <div className="hospital-bg min-h-screen flex items-center justify-center py-12">
+      <div className="max-w-md mx-auto px-4 w-full">
+        <div className="glass-card">
+          <div className="text-center mb-6">
+            <div className="w-16 h-16 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            <h2 className="text-3xl font-bold text-gradient-medical mb-2">🏥 Healthcare Portal Login</h2>
+            <p className="text-gray-600">PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL MORTALITY PREDICTION</p>
+          </div>
           
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -66,8 +74,8 @@ export default function Login() {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Username
+              <label className="form-label">
+                👤 Healthcare Professional Username
               </label>
               <input
                 type="text"
@@ -80,8 +88,8 @@ export default function Login() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Password
+              <label className="form-label">
+                🔒 Secure Password
               </label>
               <input
                 type="password"
@@ -96,30 +104,45 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full btn btn-primary disabled:opacity-50"
+              className="w-full btn btn-medical disabled:opacity-50 flex items-center justify-center space-x-2"
             >
-              {loading ? 'Logging in...' : 'Login'}
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{loading ? 'Authenticating...' : 'Access Healthcare Portal'}</span>
             </button>
           </form>
 
-          <div className="mt-6 text-center">
+          <div className="mt-8 text-center">
             <p className="text-gray-600">
-              Don't have an account?{' '}
-              <Link href="/register" className="text-blue-600 hover:text-blue-800">
-                Register here
+              New to the system?{' '}
+              <Link href="/register" className="text-teal-600 hover:text-teal-800 flex items-center justify-center space-x-1">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                </svg>
+                <span>Register as Healthcare Professional</span>
               </Link>
             </p>
-            <p className="text-gray-600 mt-2">
-              <Link href="/" className="text-blue-600 hover:text-blue-800">
-                ← Back to Home
+            <p className="text-gray-600 mt-4">
+              <Link href="/" className="text-teal-600 hover:text-teal-800 flex items-center justify-center space-x-1">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span>Return to Healthcare Portal</span>
               </Link>
             </p>
           </div>
 
-          <div className="mt-6 p-4 bg-gray-100 rounded">
-            <h4 className="font-semibold mb-2">Test Credentials:</h4>
-            <p className="text-sm">Username: 123</p>
-            <p className="text-sm">Password: 123</p>
+          <div className="mt-8 p-4 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl border border-teal-100">
+            <div className="flex items-center mb-2">
+              <svg className="w-5 h-5 text-teal-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h4 className="font-semibold text-teal-800">Demo Access Credentials:</h4>
+            </div>
+            <p className="text-sm text-teal-700"><strong>Username:</strong> 123</p>
+            <p className="text-sm text-teal-700"><strong>Password:</strong> 123</p>
+            <p className="text-xs text-teal-600 mt-1">For testing and demonstration purposes</p>
           </div>
         </div>
       </div>
