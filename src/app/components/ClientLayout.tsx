@@ -28,13 +28,17 @@ export default function ClientLayout({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <div className="hidden sm:block">
-                <h1 className="text-lg lg:text-xl font-bold text-gradient-medical">PERSONALIZED FEDERATED LEARNING</h1>
-                <p className="text-xs text-gray-600">Multi-Center Mortality Prediction</p>
+              <div className="hidden lg:block">
+                <h1 className="text-lg xl:text-xl font-bold text-gradient-medical">PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL</h1>
+                <p className="text-xs text-gray-600">MORTALITY PREDICTION OF MULTI-CENTER</p>
+              </div>
+              <div className="hidden sm:block lg:hidden">
+                <h1 className="text-sm font-bold text-gradient-medical">PERSONALIZED FEDERATED LEARNING</h1>
+                <p className="text-xs text-gray-600">IN-HOSPITAL MORTALITY PREDICTION</p>
               </div>
               <div className="sm:hidden">
-                <h1 className="text-sm font-bold text-gradient-medical">PFL System</h1>
-                <p className="text-xs text-gray-600">Healthcare AI</p>
+                <h1 className="text-xs font-bold text-gradient-medical">PFL MORTALITY PREDICTION</h1>
+                <p className="text-xs text-gray-600">Multi-Center AI System</p>
               </div>
             </div>
             
@@ -156,8 +160,8 @@ export default function ClientLayout({
                 </svg>
               </div>
               <div className="text-center md:text-left">
-                <p className="text-sm text-gray-600">© 2024 Personalized Federated Learning System</p>
-                <p className="text-xs text-gray-500">Multi-Center Healthcare Analytics</p>
+                <p className="text-sm text-gray-600">© 2024 PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL</p>
+                <p className="text-xs text-gray-500">MORTALITY PREDICTION OF MULTI-CENTER</p>
               </div>
             </div>
             

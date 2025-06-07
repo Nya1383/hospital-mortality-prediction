@@ -72,10 +72,18 @@ export default function Register() {
   }
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="max-w-2xl mx-auto">
-        <div className="card">
-          <h2 className="text-2xl font-bold text-center mb-6">User Registration</h2>
+    <div className="hospital-bg min-h-screen flex items-center justify-center py-12">
+      <div className="max-w-2xl mx-auto px-4 w-full">
+        <div className="glass-card">
+          <div className="text-center mb-8">
+            <div className="w-16 h-16 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+              </svg>
+            </div>
+            <h2 className="text-3xl font-bold text-gradient-medical mb-2">🏥 Healthcare Professional Registration</h2>
+            <p className="text-gray-600">PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL MORTALITY PREDICTION OF MULTI-CENTER</p>
+          </div>
           
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
@@ -92,8 +100,8 @@ export default function Register() {
           <form onSubmit={handleRegister} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Username *
+                <label className="form-label">
+                  👤 Healthcare Professional Username *
                 </label>
                 <input
                   type="text"
@@ -107,8 +115,8 @@ export default function Register() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email *
+                <label className="form-label">
+                  📧 Professional Email Address *
                 </label>
                 <input
                   type="email"
@@ -124,8 +132,8 @@ export default function Register() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Password *
+                <label className="form-label">
+                  🔒 Secure Password *
                 </label>
                 <input
                   type="password"
@@ -238,22 +246,31 @@ export default function Register() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full btn btn-primary disabled:opacity-50"
+              className="w-full btn btn-medical disabled:opacity-50 flex items-center justify-center space-x-2"
             >
-              {loading ? 'Registering...' : 'Register'}
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{loading ? 'Creating Account...' : 'Register as Healthcare Professional'}</span>
             </button>
           </form>
 
-          <div className="mt-6 text-center">
+          <div className="mt-8 text-center">
             <p className="text-gray-600">
-              Already have an account?{' '}
-              <Link href="/login" className="text-blue-600 hover:text-blue-800">
-                Login here
+              Already have credentials?{' '}
+              <Link href="/login" className="text-teal-600 hover:text-teal-800 flex items-center justify-center space-x-1">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013 3v1" />
+                </svg>
+                <span>Access Healthcare Portal</span>
               </Link>
             </p>
-            <p className="text-gray-600 mt-2">
-              <Link href="/" className="text-blue-600 hover:text-blue-800">
-                ← Back to Home
+            <p className="text-gray-600 mt-4">
+              <Link href="/" className="text-teal-600 hover:text-teal-800 flex items-center justify-center space-x-1">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span>Return to Healthcare Portal</span>
               </Link>
             </p>
           </div>
