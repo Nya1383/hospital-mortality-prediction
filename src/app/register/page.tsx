@@ -82,7 +82,7 @@ export default function Register() {
               </svg>
             </div>
             <h2 className="text-3xl font-bold text-gradient-medical mb-2">🏥 Healthcare Professional Registration</h2>
-            <p className="text-gray-600">PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL MORTALITY PREDICTION OF MULTI-CENTER</p>
+            <p className="text-gray-600">PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL MORTALITY PREDICTION OF MULTI-CENTER ICU</p>
           </div>
           
           {error && (

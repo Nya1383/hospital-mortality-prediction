@@ -338,7 +338,7 @@ export default function AdminPanel() {
         <div className="glass-card mb-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
             <div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient-medical mb-2">🏥 PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL MORTALITY PREDICTION OF MULTI-CENTER</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient-medical mb-2">🏥 PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL MORTALITY PREDICTION OF MULTI-CENTER ICU</h1>
               <p className="text-sm sm:text-base text-gray-600">Advanced AI Analytics Dashboard & System Management</p>
             </div>
             <div className="flex items-center space-x-4">
