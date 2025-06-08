@@ -28,7 +28,7 @@ export default function Home() {
               </div>
               <div className="text-center sm:text-left">
                 <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gradient-medical mb-2 leading-tight">
-                  PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL MORTALITY PREDICTION OF MULTI-CENTER
+                  PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL MORTALITY PREDICTION OF MULTI-CENTER ICU
                 </h1>
                 <p className="text-base sm:text-xl text-gray-600">
                   Advanced Mortality Prediction & Risk Assessment
