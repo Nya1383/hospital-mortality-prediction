@@ -30,7 +30,7 @@ export default function ClientLayout({
               </div>
               <div className="hidden lg:block">
                 <h1 className="text-lg xl:text-xl font-bold text-gradient-medical">PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL</h1>
-                <p className="text-xs text-gray-600">MORTALITY PREDICTION OF MULTI-CENTER</p>
+                <p className="text-xs text-gray-600">MORTALITY PREDICTION OF MULTI-CENTER ICU</p>
               </div>
               <div className="hidden sm:block lg:hidden">
                 <h1 className="text-sm font-bold text-gradient-medical">PERSONALIZED FEDERATED LEARNING</h1>
@@ -38,7 +38,7 @@ export default function ClientLayout({
               </div>
               <div className="sm:hidden">
                 <h1 className="text-xs font-bold text-gradient-medical">PFL MORTALITY PREDICTION</h1>
-                <p className="text-xs text-gray-600">Multi-Center AI System</p>
+                <p className="text-xs text-gray-600">Multi-Center ICU AI System</p>
               </div>
             </div>
             
@@ -161,7 +161,7 @@ export default function ClientLayout({
               </div>
               <div className="text-center md:text-left">
                 <p className="text-sm text-gray-600">© 2024 PERSONALIZED FEDERATED LEARNING FOR IN-HOSPITAL</p>
-                <p className="text-xs text-gray-500">MORTALITY PREDICTION OF MULTI-CENTER</p>
+                <p className="text-xs text-gray-500">MORTALITY PREDICTION OF MULTI-CENTER ICU</p>
               </div>
             </div>
             
